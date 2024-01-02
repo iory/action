@@ -68,17 +68,17 @@ def main() -> int:
     pip = os.path.join(bindir, 'pip')
 
     groups = (
-        Group.make(
-            f'add ppa {ppa}',
-            ('sudo', 'add-apt-repository', '--yes', ppa),
-        ),
-        Group.make(
-            f'install {py}',
-            (
-                'sudo', 'apt-get', 'install', '-y', '--no-install-recommends',
-                *packages,
-            ),
-        ),
+        # Group.make(
+        #     f'add ppa {ppa}',
+        #     ('sudo', 'add-apt-repository', '--yes', ppa),
+        # ),
+        # Group.make(
+        #     f'install {py}',
+        #     (
+        #         'sudo', 'apt-get', 'install', '-y', '--no-install-recommends',
+        #         *packages,
+        #     ),
+        # ),
         Group.make(
             f'set up {py_executable} environment',
             (py_executable, '-mvenv', envdir),
